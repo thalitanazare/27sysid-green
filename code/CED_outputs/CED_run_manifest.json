@@ -1,0 +1,56 @@
+{
+  "source_url": "https://web.archive.org/web/20210117142533id_/http://www.it.uu.se/research/publications/reports/2010-020/NonlinearData.zip",
+  "book_url": "https://sysidentpy.org/book/10-Case-Studies/",
+  "versions": {
+    "sysidentpy": "0.9.0",
+    "nonlinear-benchmarks": "1.0.1",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.0",
+    "python": "3.14.5"
+  },
+  "data": {
+    "1": {
+      "n_train": 400,
+      "n_test": 100,
+      "n_initial": 10,
+      "sha256": {
+        "u_train": "68e530088c1496df328be0e5e883d1add9511416b03905d145b65b367ada47c8",
+        "y_train": "04a153c9f2df52f2ac8f91613dcbfc2708287cd874b5fac30651fe2578192a4b",
+        "u_test": "8f2849aa1a547aab94d6d8e96ad778cd99f3b73caf11bcae1ff7110b0b76e55d",
+        "y_test": "e66dfa313f154278103a4de21e133a5fa19c348f326cfdd66a73fb9d737d65cc"
+      }
+    },
+    "2": {
+      "n_train": 400,
+      "n_test": 100,
+      "n_initial": 10,
+      "sha256": {
+        "u_train": "8fef6978f52b3f3f06d1fc6a3533475828bc445d28bc6b9e547f1efaf404044e",
+        "y_train": "758ca1b2c4bb01fc4d9233d0b657f7c5765ede5755d3754b9d9ff4080391742b",
+        "u_test": "6a88a608a59be985ee57051e1141a19f95a2f1cde3eb73c5bfe42c34e420eb4c",
+        "y_test": "156e1ce8ab9f218bb65c4d9a1d50ce210d60c63b698d5ce1832a8de175cfb062"
+      }
+    }
+  },
+  "configurations": [
+    {
+      "name": "degree2_lag7_aic",
+      "degree": 2,
+      "lag": 7
+    },
+    {
+      "name": "degree2_lag10",
+      "degree": 2,
+      "lag": 10
+    },
+    {
+      "name": "degree3_lag10",
+      "degree": 3,
+      "lag": 10
+    }
+  ],
+  "evaluation": "Free run; exclude n_initial samples; no added normalization or decimation",
+  "NRMSE_std_definition": "RMSE / std(y_test[n_initial:], ddof=0)"
+}

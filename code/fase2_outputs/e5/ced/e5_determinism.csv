@@ -1,0 +1,11 @@
+tieRule,wE,p_1thr,nMult_1thr,p_allthr,nMult_allthr,repeatable_1thr,sameOrderAcrossThreads
+err,0,2,1,2,1,1,1
+err,0.3,4,3,4,3,1,1
+err,0.5,6,7,6,7,1,0
+err,0.7,10,15,10,15,1,1
+err,1,40,86,40,86,1,0
+cost,0,2,1,2,1,1,1
+cost,0.3,4,3,4,3,1,1
+cost,0.5,6,7,6,7,1,1
+cost,0.7,10,15,10,15,1,1
+cost,1,40,86,40,86,1,1

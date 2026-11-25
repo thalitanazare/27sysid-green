@@ -1,0 +1,40 @@
+{
+  "source": "nonlinear_benchmarks.Silverbox, official loader v1.0.1",
+  "book_url": "https://sysidentpy.org/user-guide/tutorials/silver-box-system/",
+  "versions": {
+    "sysidentpy": "0.9.0",
+    "nonlinear-benchmarks": "1.0.1",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.0",
+    "python": "3.14.5"
+  },
+  "configurations": {
+    "arrow_full": {
+      "degree": 3,
+      "lag": 14,
+      "err_tol": 0.9999,
+      "n_terms": 80
+    }
+  },
+  "data_hashes": {
+    "arrow_full": {
+      "u_train": "439f5c96ff63e199de6d6596c98bdf368bc036e12dc8a5b7f97128f40342be87",
+      "y_train": "4c27ad3261df58fa0cea53a577699ed8d6d468ecc66f687f8ab4f0cb34ca6b25",
+      "u_test": "22c8e993428d450f93f78698e14b6233ca2d9779ed92fcaec36dc57c53687790",
+      "y_test": "13b8c7b26badd1a2fe6d669088fa3909596d4fe2c4b4fee46544de2a263d71f8"
+    }
+  },
+  "normalization": "none added",
+  "split": {
+    "train_start": 40650,
+    "train_stop_exclusive": 127400,
+    "validation_start": 100,
+    "validation_stop_exclusive": 40575,
+    "n_initial": 50
+  },
+  "split_note": "Full multisine segment for estimation; full arrow for validation; article cut not confirmed",
+  "evaluation": "Free run after loader-defined initialization window",
+  "NRMSE_std_definition": "RMSE / std(y_test[n_initial:], ddof=0)"
+}

@@ -1,0 +1,9 @@
+numpy==2.3.5
+scipy==1.18.1
+pandas==3.0.5
+matplotlib==3.11.0
+sysidentpy==0.9.0
+nonlinear-benchmarks==1.0.1
+pymoo==0.6.2
+torch==2.15.0
+pywin32==312; sys_platform == "win32"
