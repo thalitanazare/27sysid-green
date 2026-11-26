@@ -50,16 +50,17 @@ src = {fullfile(scriptDir,'diag_fase0_outputs','dc','fase0_final_wE070.csv'), ..
        fullfile(scriptDir,'diag_fase0_outputs','fase0_final_wE070.csv')};
 lab = {'DC motor','CED','Silverbox'};  col = {cF,cG5,[0.1 0.1 0.1]};  lst = {'-','--','-'};
 ax = nexttile(t);  hold(ax,'on');
-for i = 1:3
+msz = [6 8 8];  lw = [0.8 1.0 1.0];  hL = gobjects(1,3);
+for i = [2 3 1]                                    % a serie que termina primeiro fica por cima
     T = readtable(src{i});
-    plot(ax,T.p,T.Ltil,lst{i},'Color',col{i},'LineWidth',1.0,'Marker','.','MarkerSize',8);
+    hL(i) = plot(ax,T.p,T.Ltil,lst{i},'Color',col{i},'LineWidth',lw(i),'Marker','.','MarkerSize',msz(i));
 end
 hold(ax,'off');  grid(ax,'on');  box(ax,'on');  style(ax);
 xlim(ax,[2 40]);  ylim(ax,[0 1]);
 xlabel(ax,'Number of terms $p$','Interpreter','latex','FontSize',fs);
 ylabel(ax,'$\widetilde{L}_p$','Interpreter','latex','FontSize',fs);
 title(ax,'(b) Normalised loss, $w_E=0.70$','FontWeight','normal','FontSize',fs,'Interpreter','latex');
-lg = legend(ax,lab,'Interpreter','latex','FontSize',fs-1,'Location','northeast','Box','off');
+lg = legend(ax,hL,lab,'Interpreter','latex','FontSize',fs-1,'Location','northeast','Box','off');
 lg.ItemTokenSize = [10 6];
 
 % (c, d) ruido
