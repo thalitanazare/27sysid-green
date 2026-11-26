@@ -267,7 +267,8 @@ def main():
     dom = []
     for g in green:
         p = np.array([np.log10(max(g["L"], 1e-16)), g["C"]])
-        d = bool(np.any(np.all(allN <= p, 1) & np.any(allN < p, 1)))
+        tol = 1e-9 * np.abs(p)                       # mesmo subconjunto recalculado difere so por arredondamento
+        d = bool(np.any(np.all(allN <= p + tol, 1) & np.any(allN < p - tol, 1)))
         dom.append(dict(wE=g["wE"], dominated=d))
 
     # NRMSE de validacao das solucoes NSGA-II nao dominadas (uniao das sementes)
