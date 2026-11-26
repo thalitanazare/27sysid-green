@@ -15,7 +15,7 @@ scriptDir = fileparts(mfilename('fullpath'));
 if isempty(scriptDir), scriptDir = pwd; end
 F2 = fullfile(scriptDir,'fase2_outputs');
 outFile = fullfile(scriptDir,'..','27IFAC_greenSI_Thalita','V1','fig_cost.pdf');
-fs = 7;  W = 8.4;  H = 5.0;
+fs = 7;  W = 8.4;  H = 4.7;
 cP = [0.227 0.431 0.647];  cN = [0.80 0.40 0.10];
 RATE = 121.81/60;                                    % mg CO2e por segundo
 fsSB = 1e7/2^14;                                     % Hz
@@ -49,7 +49,7 @@ set(ax,'FontName','Times New Roman','FontSize',fs,'LineWidth',0.5, ...
 xlabel(ax,'Complexity $C$','Interpreter','latex','FontSize',fs);
 ylabel(ax,'Measured time (ns/sample)','Interpreter','latex','FontSize',fs);
 title(ax,'(a)','FontWeight','normal','FontSize',fs,'Interpreter','latex');
-lg = legend(ax,[ax.Children(end) ax.Children(end-1) h],[{'Polynomial','Affine fit'} famLab], ...
+lg = legend(ax,[ax.Children(end) ax.Children(end-1) h],[{'Polynomial','Linear fit'} famLab], ...
     'Interpreter','latex','FontSize',fs-1,'Location','northwest','Box','on','Color','w','EdgeColor',[0.6 0.6 0.6]);
 lg.ItemTokenSize = [10 6];
 
@@ -75,10 +75,10 @@ set(ax,'FontName','Times New Roman','FontSize',fs,'LineWidth',0.5, ...
 xlabel(ax,'Operation time (days)','Interpreter','latex','FontSize',fs);
 ylabel(ax,'Cumulative CO$_2$e (g)','Interpreter','latex','FontSize',fs);
 title(ax,'(b) Silverbox, 610 Hz','FontWeight','normal','FontSize',fs,'Interpreter','latex');
-lg = legend(ax,lab,'Interpreter','latex','FontSize',fs-1,'Box','off','NumColumns',3);
+lg = legend(ax,lab,'Interpreter','latex','FontSize',fs-1,'Box','off','NumColumns',5);
 lg.Layout.Tile = 'south';
 text(ax,230,3,'1 year','FontSize',fs-1,'Interpreter','latex','Rotation',90,'HorizontalAlignment','center');
-lg.ItemTokenSize = [12 6];
+lg.ItemTokenSize = [10 6];
 
 exportgraphics(f,outFile,'ContentType','vector');
 fprintf('Figura salva em %s\n',outFile);
