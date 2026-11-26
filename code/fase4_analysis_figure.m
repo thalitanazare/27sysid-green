@@ -76,7 +76,15 @@ for c = 1:2
         x = (1:4) + off(m);
         med = [r0.NRMSE; r.NRMSE_med];  lo = [r0.NRMSE; r.NRMSE_q1];  hi = [r0.NRMSE; r.NRMSE_q3];
         h(m) = errorbar(ax,x,med,med-lo,hi-med,mmk{m},'Color',mcol{m}, ...
-            'MarkerFaceColor',mcol{m},'MarkerSize',4.5,'LineWidth',0.8,'CapSize',3);
+            'MarkerFaceColor',mcol{m},'MarkerSize',3,'LineWidth',0.8,'CapSize',3);
+    end
+    for m = 1:3                                    % barras por cima dos marcadores
+        r0 = Sp(Sp.model == models{m},:);  r0 = r0(1,:);
+        r = Sm(Sm.model == models{m},:);  r = sortrows(r,'SNR_dB','descend');
+        x = (1:4) + off(m);
+        med = [r0.NRMSE; r.NRMSE_med];  lo = [r0.NRMSE; r.NRMSE_q1];  hi = [r0.NRMSE; r.NRMSE_q3];
+        errorbar(ax,x,med,med-lo,hi-med,'LineStyle','none','Marker','none', ...
+            'Color',mcol{m}*0.75,'LineWidth',0.8,'CapSize',3,'HandleVisibility','off');
     end
     hold(ax,'off');  grid(ax,'on');  box(ax,'on');  style(ax);
     xlim(ax,[0.5 4.5]);  xticks(ax,1:4);  xticklabels(ax,{'none','40','30','20'});
